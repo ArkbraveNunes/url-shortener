@@ -1,98 +1,377 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# URL-SHORTENER API
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Olá, bom dia, aqui será apresentado uma documentação relativa a estrutura de todas as aplicações que forem criadas dentro desse repositório, o objetivo dessa documentação é expôr de maneira clara e objetiva o funcionamento da aplicação bem como sua estrutura;
+Os padrões aqui impostos seguem conceitos como Clean Code, Clean Architecture, SOLID, DRY, KISS e Design Patterns;
+Essa documentação também tem correlação ao [TypeScript Style Guide](https://google.github.io/styleguide/tsguide.html) proposto pelo Google;
+Uma outra fonte de inspiração foi o repositório [Clean Code Typescript](https://github.com/labs42io/clean-code-typescript), que adapta conceitos conhecidos do Clean Code para o Typescript;
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+# IMPORTANTE
 
-## Description
+Para rodar esse projeto é obrigatório ter o [Docker](https://docs.docker.com/engine/install/) instalado!
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-## Project setup
+# Passos Iniciais
 
-```bash
-$ yarn install
+Execute o seguinte comando para clonar o .env.sample para .env e iniciar os projetos via docker
+
+```shell
+  ./scripts/init.sh
 ```
 
-## Compile and run the project
+A api e banco de dados estarão rodando no localhost da sua máquina na porta definida no aquivo .env
 
-```bash
-# development
-$ yarn run start
+### Instalação do Husky:
 
-# watch mode
-$ yarn run start:dev
+Após instalar o pacote do husky rode o comando abaixo no terminal
 
-# production mode
-$ yarn run start:prod
+```
+yarn prepare
 ```
 
-## Run tests
+Com isso o husky será configurado na pasta ./husky
 
-```bash
-# unit tests
-$ yarn run test
+Por último precisamos adicionar os hooks do husky, para isso vamos rodar o script husky-config
 
-# e2e tests
-$ yarn run test:e2e
-
-# test coverage
-$ yarn run test:cov
+```shell
+  ./scripts/husky-config.sh
 ```
 
-## Deployment
+### Commitzen:
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+Usando o commando "git-cz" será aberta uma interface onde você pode escolher qual o tipo de categoria do commit (feat, fix, docs, style, refactor, perf, test, build, ci, chore, revert); Selecionando a categoria você poderá digitar o escopo que pertence o commit, uma mensagem curta sobre o commit, e caso deseje adicionar mais detalhes também terá a opção de colocar uma descrição;
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+Caso tenha alguma dúvida ou queira personalizar mais a configuração, segue abaixo o artigo em que foi inspirado a implementação dessas ferramentas:
 
-```bash
-$ yarn install -g @nestjs/mau
-$ mau deploy
+[Padronização de commit com (Commitlint, Husky e Commitizen)](https://dev.to/vitordevsp/padronizacao-de-commit-com-commitlint-husky-e-commitizen-3g1n)
+
+## Swagger
+
+... a ser adicionado
+
+## Principais Ferramentas
+
+Principais ferramentas utilizadas:
+
+- [Nestjs](https://nestjs.com/)
+- [Husky](https://typicode.github.io/husky/)
+- [CommitLint](https://commitlint.js.org/#/)
+- [Commitzen](https://commitizen-tools.github.io/commitizen/)
+- [Padronização de commit com (Commitlint, Husky e Commitizen)](https://dev.to/vitordevsp/padronizacao-de-commit-com-commitlint-husky-e-commitizen-3g1n)
+- [Typescript](https://www.typescriptlang.org/)
+- [ESLint](https://eslint.org/)
+- [ESLint SonarJS](https://github.com/SonarSource/eslint-plugin-sonarjs/tree/master)
+- [Prettier](https://prettier.io/)
+- [Lint Staged](https://eslint.org/https://www.npmjs.com/package/lint-staged)
+- [Jest](https://jestjs.io/pt-BR/)
+- [Jest Mock Extended](https://www.npmjs.com/package/jest-mock-extended)
+- [Compodoc](https://compodoc.app)
+- [docker](https://docs.docker.com/engine/install/)
+
+## Estrutura
+
+O Projeto segue o seguinte modelo de orgranização de arquivos e pastas:
+
+```
+    /...
+    /src
+      |__/common
+        |__/config
+        |__/enum
+      |__/moduleName
+        |__/application
+          |__/controller
+          |__/dto
+        |_/domain
+          |_/contract
+          |_/entity
+          |_/service
+        |_/infra
+          |_/repository
+          |_/adapter
+          |_/schema
+    /...
 ```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+- /src - Aqui se localiza a raíz da aplicação em questão;
 
-## Resources
+- /common - Aqui é armazendo pastas contendo arquivos cuja finalidade é utilizá-los na aplicação como um todo independente do seu local;
 
-Check out a few resources that may come in handy when working with NestJS:
+  - /config - Local os se localiza o mapeamento das variáveis de ambiente(env) da aplicação
+  - /enum - Essa pasta compreende os enums(identificadores) utilizados na aplicação como um todo
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+- /moduleName -> Aqui são armazenados os módulos da aplicação;
 
-## Support
+- /moduleName/application:
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+  - /controller - Essa pasta compreende os controllers da aplicação;
+  - /dto - Aqui se localiza as definições de entrada(IN) e saída(OUT) dos controllers;
 
-## Stay in touch
+- /moduleName/domain:
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+  - /service: Compreende principalmente os services da aplicação;
+  - /entity - Entidade de conversão de dados, atuando como um de/para para os dados fornecidos pelo Banco de Dados;
+  - /contract - Local onde fica definido os métodos(queries) enviadas ao banco de dados;
 
-## License
+- /moduleName/infra:
+  - /repository: Aqui se localiza as queries executadas no banco de dados;
+  - /adapter: Diretório que compreende conexões com provedores de terceiros ou outras aplicações em diferentes contextos;
+  - /schema: Local onde são armazenadas as Tabelas e/ou Schemas/Models relativas ao Banco de Dados;
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+CASO QUEIRA UMA VISUALIZAÇÃO MAIS DIDÁTICA VOCÊ PODE RODAR O COMPODOC COM O COMANDO:
+
+```shell
+npm run compodoc:build
+npm run compodoc:run
+```
+
+ACESSANDO O http://localhost:4000 UMA INTERFACE VISUAL SERÁ APRESENTADA COM A ESTRUTURAÇÃO DE TODOS OS MÓDULOS DO PROJETO!
+
+## Testes
+
+- Neste projeto utilizamos o [Jest](https://jestjs.io/pt-BR/) como framework para a execução de testes unitários e e2e. Todas as configurações utilizadas podem ser encontradas no arquivo `jest.config.json` presente na raiz do projeto.
+- Os arquivos contendo testes unitários devem estar no mesmo diretório do código de produção. Por padrão, os arquivos de teste devem ter o mesmo nome do arquivo onde está a implementação do que está sendo testado, com a adição do sufixo `spec`, por exemplo, `my-code.service.spec.ts`.
+- Os testes e2e ficam no diretório `test`, na raiz do projeto, e são organizados por módulos. Esse tipo de teste é utilizado para testar o fluxo da aplicação como um todo, fazendo um request para um endpoint e recebendo uma response. Para efetuar requests nos testes e2e é utilizado a lib [Supertest](https://www.npmjs.com/package/supertest) em conjunto com o Jest. O nome dos arquivos de teste deve ter o seguinte padrão: nome do módulo + sufixo e2e-spec, como por exemplo, `my-module.e2e-spec.ts`.
+- Este projeto também está configurado para gerar relatórios de execução de testes e de coverage. Os de execução podem ser encotrados no diretório `reports` e os de coverage em `coverage`, ambos na raiz da aplicação.
+- Os seguintes scripts estão configurados para a execução dos testes:
+  - `test` - executa todos os testes da aplicação.
+  - `test:watch` - executa os testes em watch mode.
+  - `test:staged` - executa os testes relacionados aos arquivos da staging area do git.
+  - `test:cov` - executa todos os testes da aplicação e gera o relatório de coverage.
+  - `test:debug` - executa os testes no modo debug.
+  - `test:e2e` - executa os testes e2e.
+
+## Husky
+
+O Husky é uma ferramenta utilizada para a criação e execução de [git hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks), permitindo executar lint, tests, etc... ao fazer um commit ou push.
+Neste projeto temos três hooks configurados:
+
+- commit-msg: Hook executado quando um commit é realizado. Visa validar, juntamente com o commintlint, se todos os commits estão dentro do padrão estabelecido.
+- pre-commit: Hook executado antes de todos os commits. Com o auxílio do lint-staged executa os testes e lint para todos os arquivos que foram alterados.
+- pre-push: Hook executado antes do push para o repositório de origem. É utilizado para rodar os testes e lint de todo projeto antes de confirmar o push para a origem.
+
+Para melhor entendimento do funcionamento dessa biblioteca, basta acessar o [guia](https://typicode.github.io/husky/guide.html) disponível na documentação oficial do Husky.
+
+## Eslint + Prettier + SonarJS
+
+O ESLint/Prettier/SonarJS analisa estaticamente o código da aplicação para encontrar e corrigir problemas de lint rapidamente. Todas as configurações de plugins e regras de lint utilizadas estão no arquivo `.eslintrc.js` na raiz da aplicação.
+
+Para executar o lint basta rodar o seguinte comando: `npm run lint`.
+
+Caso queira entender melhor sobre o funcionamento das bibliotecas, recomendamos a consulta em suas documentações oficiais: [ESLint](https://eslint.org/), [ESLint SonarJS](https://github.com/SonarSource/eslint-plugin-sonarjs/tree/master), [Prettier](https://prettier.io/).
+
+## Padrões de Nomenclatura
+
+- Use PascalCase para nomes de classes, types e interfaces: `MyClass`.
+- Use camelCase para nomes de variáveis, funções e métodos: `exampleVariable`, `myFunction()`.
+- Use kebab-case + nome da pasta para nome dos arquivos: `my-code.service.ts`,`my-code.repository.ts`.
+- Para testes, siga o mesmo padrão de nomes de arquivos, com a adição do sufixo spec: `my-code.service.spec.ts`,`my-code.repository.spec.ts`.
+- Use snake_case + uppercase para nomes de constantes e enums: `MAX_LIMIT`, `MIN_LIMIT`.
+
+## Boas Práticas
+
+### 1. Defina variáveis com nomes pronunciáveis e que façam sentido. Isso também serve para tipos, funções e etc.
+
+**Bad:**
+
+```ts
+type DtaRcrd102 = {
+  genymdhms: Date;
+  modymdhms: Date;
+  pszqint: number;
+};
+```
+
+**Good:**
+
+```ts
+type Customer = {
+  generationTimestamp: Date;
+  modificationTimestamp: Date;
+  recordId: number;
+};
+```
+
+### 2. Defina variáveis com nomes que possam ser lidos e procurados com facilidade.
+
+**Bad:**
+
+```ts
+// What the heck is 86400000 for?
+setTimeout(restart, 86400000);
+```
+
+**Good:**
+
+```ts
+// Declare them as capitalized named constants.
+const MILLISECONDS_PER_DAY = 24 * 60 * 60 * 1000; // 86400000
+
+setTimeout(restart, MILLISECONDS_PER_DAY);
+```
+
+### 3. Evite mapeamento mental. Defina variáveis de forma explicita.
+
+Explicit is better than implicit.
+_Clarity is king._
+**Bad:**
+
+```ts
+const u = getUser();
+const s = getSubscription();
+const t = charge(u, s);
+```
+
+**Good:**
+
+```ts
+const user = getUser();
+const subscription = getSubscription();
+const transaction = charge(user, subscription);
+```
+
+### 4. Use argumentos default ao invés de condicionais ou ternários.
+
+**Bad:**
+
+```ts
+function loadPages(count?: number) {
+  const loadCount = count !== undefined ? count : 10;
+  // ...
+}
+```
+
+**Good:**
+
+```ts
+function loadPages(count: number = 10) {
+  // ...
+}
+```
+
+### 5. Use enums para documentar a intenção do código.
+
+**Bad:**
+
+```ts
+const GENRE = {
+  ROMANTIC: 'romantic',
+  DRAMA: 'drama',
+  COMEDY: 'comedy',
+  DOCUMENTARY: 'documentary',
+};
+
+configureFilm(GENRE.COMEDY);
+```
+
+**Good:**
+
+```ts
+enum GENRE {
+  ROMANTIC,
+  DRAMA,
+  COMEDY,
+  DOCUMENTARY,
+}
+
+configureFilm(GENRE.COMEDY);
+```
+
+### 6. Limite a quantidade de paramêtros de uma função/método para no máximo 2
+
+**Bad:**
+
+```ts
+function createMenu(
+  title: string,
+  body: string,
+  buttonText: string,
+  cancellable: boolean,
+) {
+  // ...
+}
+
+createMenu('Foo', 'Bar', 'Baz', true);
+```
+
+**Good:**
+
+```ts
+type MenuOptions = {
+  title: string;
+  body: string;
+  buttonText: string;
+  cancellable: boolean;
+};
+
+function createMenu(options: MenuOptions) {
+  // ...
+}
+
+createMenu({
+  title: 'Foo',
+  body: 'Bar',
+  buttonText: 'Baz',
+  cancellable: true,
+});
+```
+
+### 7. Funções/métodos devem ter uma única responsabilidade.
+
+**Bad:**
+
+```ts
+function emailActiveClients(clients: Client[]) {
+  clients.forEach((client) => {
+    const clientRecord = database.lookup(client);
+    if (clientRecord.isActive()) {
+      email(client);
+    }
+  });
+}
+```
+
+**Good:**
+
+```ts
+function emailActiveClients(clients: Client[]) {
+  clients.filter(isActiveClient).forEach(email);
+}
+
+function isActiveClient(client: Client) {
+  const clientRecord = database.lookup(client);
+  return clientRecord.isActive();
+}
+```
+
+### 8. Nomes de funções/métodos devem dizer exatamente o que fazem.
+
+**Bad:**
+
+```ts
+function addToDate(date: Date, month: number): Date {
+  // ...
+}
+
+const date = new Date();
+
+// It's hard to tell from the function name what is added
+addToDate(date, 1);
+```
+
+**Good:**
+
+```ts
+function addMonthToDate(date: Date, month: number): Date {
+  // ...
+}
+
+const date = new Date();
+addMonthToDate(date, 1);
+```
+
+# Referências
+
+- [The Clean Code Blog](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
+- [The Catalog of Design Patterns](https://refactoring.guru/design-patterns/catalog)
+- [SOLID with Typescript](https://github.com/labs42io/clean-code-typescript)
+- [Google Typescript Style Guide](https://google.github.io/styleguide/tsguide.html)
