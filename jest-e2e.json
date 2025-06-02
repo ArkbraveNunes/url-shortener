@@ -1,0 +1,18 @@
+{
+  "moduleFileExtensions": ["js", "json", "ts"],
+  "rootDir": ".",
+  "clearMocks": true,
+  "projects": [
+    {
+      "displayName": "occupa-api",
+      "clearMocks": true,
+      "rootDir": "./",
+      "testRegex": "\\.e2e-spec\\.ts$",
+      "transform": {
+        "^.+\\.(t|j)sx?$": "@swc/jest"
+      },
+      "moduleNameMapper": {}
+    }
+  ],
+  "testEnvironment": "node"
+}
