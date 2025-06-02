@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/husky.sh"
+
+yarn lint
+yarn test:cov
+yarn test:e2e
