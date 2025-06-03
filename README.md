@@ -46,7 +46,7 @@ Caso tenha alguma dúvida ou queira personalizar mais a configuração, segue ab
 
 ## Swagger
 
-... a ser adicionado
+Acessando a rota http://localhost:3000/docs , será possivel acessar o swagger da aplicação com todas as rotas;
 
 ## Principais Ferramentas
 
@@ -77,18 +77,21 @@ O Projeto segue o seguinte modelo de orgranização de arquivos e pastas:
       |__/common
         |__/config
         |__/enum
-      |__/moduleName
-        |__/application
-          |__/controller
-          |__/dto
-        |_/domain
-          |_/contract
-          |_/entity
-          |_/service
-        |_/infra
-          |_/repository
-          |_/adapter
-          |_/schema
+      |__/libs
+      |__/module
+        |__/module-name
+          |__/application
+            |__/controller
+            |__/dto
+          |_/domain
+            |_/contract
+            |_/entity
+            |_/service
+          |_/infra
+            |_/repository
+            |_/adapter
+            |_/schema
+      /...
     /...
 ```
 
@@ -99,20 +102,22 @@ O Projeto segue o seguinte modelo de orgranização de arquivos e pastas:
   - /config - Local os se localiza o mapeamento das variáveis de ambiente(env) da aplicação
   - /enum - Essa pasta compreende os enums(identificadores) utilizados na aplicação como um todo
 
-- /moduleName -> Aqui são armazenados os módulos da aplicação;
+- /libs -> Aqui são armazenados bibliotecas externas que são utilizadas pela aplicação, além de servir como um centralizador de módulos exportados, que podem ser consumidos pelos modulos da regra de negócio;
 
-- /moduleName/application:
+- /module -> Aqui são armazenados os módulos da aplicação relativos a regra de negócio;
+
+- /module-name/application:
 
   - /controller - Essa pasta compreende os controllers da aplicação;
   - /dto - Aqui se localiza as definições de entrada(IN) e saída(OUT) dos controllers;
 
-- /moduleName/domain:
+- /module-name/domain:
 
   - /service: Compreende principalmente os services da aplicação;
   - /entity - Entidade de conversão de dados, atuando como um de/para para os dados fornecidos pelo Banco de Dados;
   - /contract - Local onde fica definido os métodos(queries) enviadas ao banco de dados;
 
-- /moduleName/infra:
+- /module-name/infra:
   - /repository: Aqui se localiza as queries executadas no banco de dados;
   - /adapter: Diretório que compreende conexões com provedores de terceiros ou outras aplicações em diferentes contextos;
   - /schema: Local onde são armazenadas as Tabelas e/ou Schemas/Models relativas ao Banco de Dados;
