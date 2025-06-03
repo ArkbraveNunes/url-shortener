@@ -20,7 +20,6 @@
     "test:staged": "yarn test -- --findRelatedTests",
     "test:cov": "yarn test  -- --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "yarn test -- --config ./jest-e2e.json",
     "prepare": "husky",
     "compodoc:build": "npx compodoc -p tsconfig.doc.json",
     "compodoc:run": "compodoc -s -r 4000 -d ./documentation/"

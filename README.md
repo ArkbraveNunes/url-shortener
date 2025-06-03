@@ -143,7 +143,6 @@ ACESSANDO O http://localhost:4000 UMA INTERFACE VISUAL SERÁ APRESENTADA COM A E
   - `test:staged` - executa os testes relacionados aos arquivos da staging area do git.
   - `test:cov` - executa todos os testes da aplicação e gera o relatório de coverage.
   - `test:debug` - executa os testes no modo debug.
-  - `test:e2e` - executa os testes e2e.
 
 ## Husky
 
