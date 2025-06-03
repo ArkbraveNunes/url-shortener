@@ -2,6 +2,7 @@
   "compilerOptions": {
     "module": "commonjs",
     "declaration": true,
+    "esModuleInterop": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -16,6 +17,26 @@
     "forceConsistentCasingInFileNames": true,
     "noImplicitAny": false,
     "strictBindCallApply": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@auth/*": [
+        "./src/module/auth/*"
+      ],
+      "@user/*": [
+        "./src/module/user/*"
+      ],
+      "@url-short/*": [
+        "./src/module/url-short/*"
+      ],
+      "@common/*": [
+        "./src/common/*"
+      ],
+      "@libs/*": [
+        "./src/libs/*"
+      ],
+      "@test/*": [
+        "./test/*"
+      ],
+    }
   }
 }
