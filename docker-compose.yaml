@@ -5,7 +5,7 @@ services:
     env_file: ./.env
     container_name: api.url-shortener
     ports:
-      - '${API_OCCUPA_PORT}:${API_OCCUPA_PORT}'
+      - '${API_PORT}:${API_PORT}'
     environment:
       - NODE_ENV=${NODE_ENV}
       - DB_HOST=${DB_POSTGRES_HOST}
