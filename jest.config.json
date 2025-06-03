@@ -4,13 +4,20 @@
   "clearMocks": true,
   "projects": [
     {
-      "displayName": "occupa-api",
+      "displayName": "url-short",
       "clearMocks": true,
       "rootDir": "./",
       "transform": {
         "^.+\\.(t|j)sx?$": "@swc/jest"
       },
-      "moduleNameMapper": {}
+      "moduleNameMapper": {
+        "^@auth(.*)$": "<rootDir>/src/module/auth/$1",
+        "^@user(.*)$": "<rootDir>/src/module/user/$1",
+        "^@url-short(.*)$": "<rootDir>/src/module/url-short/$1",
+        "^@common(.*)$": "<rootDir>/src/common/$1",
+        "^@libs(.*)$": "<rootDir>/src/libs/$1",
+        "^@test(.*)$": "<rootDir>/test/$1"
+      }
     }
   ],
   "testEnvironment": "node",
